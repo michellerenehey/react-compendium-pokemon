@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { getPokemon } from './services/pokemon';
 
 import './App.css';
 
@@ -9,8 +10,8 @@ function App() {
   //useEffect hook
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch('https://pokedex-alchemy.herokuapp.com/api/pokedex');
-      const data = await response.json();
+      const data = await getPokemon();
+      console.log(data);
       setPokemonList(data.results);
     };
     fetchData();
