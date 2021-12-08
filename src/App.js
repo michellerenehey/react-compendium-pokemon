@@ -1,11 +1,14 @@
 import { useEffect, useState } from 'react';
 import { getPokemon } from './services/pokemon';
 
+import PokeCard from './components/PokeCard';
+
 import './App.css';
 
 function App() {
   //state
   const [pokemonList, setPokemonList] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   //useEffect hook
   useEffect(() => {
@@ -13,6 +16,7 @@ function App() {
       const data = await getPokemon();
       console.log(data);
       setPokemonList(data.results);
+      setLoading(false);
     };
     fetchData();
   }, []);
@@ -21,9 +25,8 @@ function App() {
   return (
     <div className="App">
       <h1> Welcome to Pokemon </h1>
-      {pokemonList.map((item) => (
-        <p key={item.id}>{item.pokemon}</p>
-      ))}
+      {loading && <p>Loading...</p>}
+      {!loading && <PokeCard pokemon={pokemonList} />}
     </div>
   );
 }
