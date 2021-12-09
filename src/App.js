@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { getPokemon } from './services/pokemon';
+import { getPokemon, getTypes } from './services/pokemon';
 
 import PokeCard from './components/PokeCard';
 import Controls from './components/Controls';
@@ -12,11 +12,13 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [query, setQuery] = useState('');
   const [order, setOrder] = useState('asc');
+  const [types, setTypes] = useState([]);
+  const [selectedType, setSelectedType] = useState('all');
 
-  //useEffect hook
+  //useEffect hook for loading pokemon
   useEffect(() => {
     const fetchData = async () => {
-      const data = await getPokemon(query, order);
+      const data = await getPokemon(query, order, selectedType);
       // console.log(data);
       setPokemonList(data.results);
       setLoading(false);
@@ -24,7 +26,16 @@ function App() {
     if (loading) {
       fetchData();
     }
-  }, [loading, query, order]);
+  }, [loading, query, order, selectedType]);
+
+  //useEffect hook for getting types
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await getTypes();
+      setTypes(data);
+    };
+    fetchData();
+  }, []);
 
   //rendering page
   return (
@@ -39,6 +50,9 @@ function App() {
             setLoading={setLoading}
             order={order}
             setOrder={setOrder}
+            types={types}
+            selectedType={selectedType}
+            setSelectedType={setSelectedType}
           />
           <PokeCard pokemon={pokemonList} />
         </>
