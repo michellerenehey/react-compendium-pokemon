@@ -1,4 +1,5 @@
 import '../styles/Controls.css';
+import Button from '@mui/material/Button';
 
 export default function Controls({
   query,
@@ -37,9 +38,9 @@ export default function Controls({
           </option>
         ))}
       </select>
-      <button className="searchButtonClass" onClick={() => setLoading(true)}>
+      <Button variant="outlined" color="success" onClick={() => setLoading(true)}>
         Search
-      </button>
+      </Button>
     </div>
   );
 }
