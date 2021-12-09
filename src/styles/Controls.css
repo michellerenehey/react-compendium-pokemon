@@ -1,0 +1,11 @@
+.queryClass,
+.orderClass,
+.searchButtonClass {
+  margin: 5px;
+  padding: 5px;
+  font-family: 'Space Mono', monospace;
+  color: green;
+  background-color: pink;
+  border-radius: 5px;
+  border: 2px solid green;
+}
