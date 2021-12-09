@@ -31,7 +31,7 @@ export default function Controls({
         value={selectedType}
         onChange={(e) => setSelectedType(e.target.value)}
       >
-        <option value="all">All</option>
+        <option value="all">all</option>
         {types.map((type) => (
           <option key={type} value={type}>
             {type}
