@@ -1,6 +1,7 @@
 .queryClass,
 .orderClass,
-.searchButtonClass {
+.searchButtonClass,
+.typeClass {
   margin: 5px;
   padding: 5px;
   font-family: 'Space Mono', monospace;
