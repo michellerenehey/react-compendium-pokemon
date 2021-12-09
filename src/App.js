@@ -15,7 +15,7 @@ function App() {
   //useEffect hook
   useEffect(() => {
     const fetchData = async () => {
-      const data = await getPokemon();
+      const data = await getPokemon(query);
       console.log(data);
       setPokemonList(data.results);
       setLoading(false);
@@ -23,7 +23,7 @@ function App() {
     if (loading) {
       fetchData();
     }
-  }, [loading]);
+  }, [loading, query]);
 
   //rendering page
   return (
@@ -32,7 +32,7 @@ function App() {
       {loading && <p>Loading...</p>}
       {!loading && (
         <>
-          <Controls query={query} setQuery={setQuery} />
+          <Controls query={query} setQuery={setQuery} setLoading={setLoading} />
           <PokeCard pokemon={pokemonList} />
         </>
       )}

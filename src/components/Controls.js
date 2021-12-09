@@ -1,6 +1,6 @@
 import '../styles/Controls.css';
 
-export default function Controls({ query, setQuery }) {
+export default function Controls({ query, setQuery, setLoading }) {
   return (
     <div>
       <input
@@ -11,6 +11,7 @@ export default function Controls({ query, setQuery }) {
           setQuery(e.target.value);
         }}
       />
+      <button onClick={() => setLoading(true)}>Search</button>
     </div>
   );
 }
