@@ -17,7 +17,7 @@ function App() {
   useEffect(() => {
     const fetchData = async () => {
       const data = await getPokemon(query, order);
-      console.log(data);
+      // console.log(data);
       setPokemonList(data.results);
       setLoading(false);
     };
