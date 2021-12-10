@@ -82,7 +82,7 @@ function App() {
               variant="outlined"
               color="success"
               onClick={handleNextPage}
-              disabled={pokemonList.length <= 20}
+              disabled={pokemonList.length < 20}
             >
               Next Page
             </Button>
