@@ -73,11 +73,13 @@ function App() {
           <PokeCard pokemon={pokemonList} />
           <div className="pagination">
             <p className="currentPage">Current Page: {currentPage}</p>
+            {currentPage !== 1 && (
+              <Button variant="outlined" color="success" onClick={handlePrevPage}>
+                Previous Page
+              </Button>
+            )}
             <Button variant="outlined" color="success" onClick={handleNextPage}>
               Next Page
-            </Button>
-            <Button variant="outlined" color="success" onClick={handlePrevPage}>
-              Previous Page
             </Button>
           </div>
         </>
