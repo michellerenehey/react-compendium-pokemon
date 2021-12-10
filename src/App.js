@@ -78,7 +78,12 @@ function App() {
                 Previous Page
               </Button>
             )}
-            <Button variant="outlined" color="success" onClick={handleNextPage}>
+            <Button
+              variant="outlined"
+              color="success"
+              onClick={handleNextPage}
+              disabled={pokemonList.length <= 20}
+            >
               Next Page
             </Button>
           </div>
