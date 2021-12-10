@@ -22,7 +22,7 @@ function App() {
   useEffect(() => {
     const fetchData = async () => {
       const data = await getPokemon(query, order, selectedType, currentPage);
-      console.log(data);
+      // console.log(data);
       setPokemonList(data.results);
       setLoading(false);
     };
