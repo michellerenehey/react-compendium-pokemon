@@ -1,15 +1,18 @@
 import { render, screen } from '@testing-library/react';
-import Controls from './PokeCard';
+import Controls from './Controls';
 
-test.skip('renders a control panel', () => {
-  const container = render(<Controls 
-    query,
-  setQuery,
-  setLoading,
-  order,
-  setOrder,
-  types,
-  selectedType,
-  setSelectedType, />);
+test('renders a control panel', () => {
+  const container = render(
+    <Controls
+      query="ab"
+      setQuery="ab"
+      setLoading="false"
+      order="asc"
+      setOrder="asc"
+      types={['fairy']}
+      selectedType="fairy"
+      setSelectedType="fairy"
+    />
+  );
   expect(container).toMatchSnapshot();
 });
