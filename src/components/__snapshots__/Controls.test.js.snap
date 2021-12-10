@@ -45,7 +45,17 @@ Object {
           tabindex="0"
           type="button"
         >
-          Search
+          <svg
+            aria-hidden="true"
+            class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+            data-testid="CheckIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"
+            />
+          </svg>
           <span
             class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
           />
@@ -94,7 +104,17 @@ Object {
         tabindex="0"
         type="button"
       >
-        Search
+        <svg
+          aria-hidden="true"
+          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+          data-testid="CheckIcon"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"
+          />
+        </svg>
         <span
           class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
         />
